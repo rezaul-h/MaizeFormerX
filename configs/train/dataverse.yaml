@@ -1,0 +1,23 @@
+inherits: "configs/train/default.yaml"
+
+dataset:
+  name: "dataverse"
+  num_classes: 3
+  class_names:
+    - "Healthy"
+    - "MLB"
+    - "MSV"
+
+loader:
+  batch_size: 32
+
+training:
+  epochs: 30
+
+augmentation:
+  enabled: true
+  config_name: "dataverse_x2"
+
+tracking:
+  experiment_name: "dataverse_train"
+  tags: ["dataverse", "in-domain"]

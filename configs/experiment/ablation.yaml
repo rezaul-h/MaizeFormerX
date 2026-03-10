@@ -1,0 +1,41 @@
+experiment:
+  name: "ablation_study"
+  type: "ablation"
+
+dataset_priority:
+  - "dataverse"
+  - "tanzania"
+  - "plagues_maiz"
+
+base_model: "maizeformerx"
+
+ablations:
+  - name: "full_model"
+    remove_csaf: false
+    remove_multi_scale: false
+    remove_transformer_encoder: false
+
+  - name: "without_csaf"
+    remove_csaf: true
+    remove_multi_scale: false
+    remove_transformer_encoder: false
+
+  - name: "without_multi_scale"
+    remove_csaf: false
+    remove_multi_scale: true
+    remove_transformer_encoder: false
+
+  - name: "without_transformer_encoder"
+    remove_csaf: false
+    remove_multi_scale: false
+    remove_transformer_encoder: true
+
+augmentation_for_training:
+  dataverse: "dataverse_x2"
+  tanzania: "tanzania_x2"
+  plagues_maiz: "plagues_maiz_x4"
+
+execution:
+  seeds: [42, 52, 62, 72, 82]
+  export_tables: true
+  export_figures: true

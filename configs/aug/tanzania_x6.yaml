@@ -1,0 +1,43 @@
+augmentation:
+  name: "tanzania_x6"
+  dataset: "tanzania"
+  expansion_factor: 6
+
+train:
+  resize: [224, 224]
+  horizontal_flip:
+    p: 0.50
+  vertical_flip:
+    p: 0.15
+  rotation:
+    degrees: 24
+    p: 0.60
+  random_resized_crop:
+    size: 224
+    scale: [0.76, 1.00]
+    ratio: [0.85, 1.15]
+    p: 0.55
+  color_jitter:
+    brightness: 0.24
+    contrast: 0.24
+    saturation: 0.18
+    hue: 0.04
+    p: 0.50
+  affine:
+    translate: [0.08, 0.08]
+    scale: [0.90, 1.08]
+    shear: 8
+    p: 0.24
+  gaussian_blur:
+    kernel_size: 5
+    sigma: [0.1, 1.5]
+    p: 0.18
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+val_test:
+  resize: [224, 224]
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]

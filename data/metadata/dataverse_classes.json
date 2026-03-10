@@ -1,0 +1,52 @@
+{
+  "dataset_name": "dataverse",
+  "taxonomy_level": "disease_class",
+  "num_classes": 3,
+  "classes": [
+    {
+      "class_name": "Healthy",
+      "slug": "healthy",
+      "class_index": 0,
+      "original_count": 5327,
+      "train_count": 4261,
+      "val_count": 266,
+      "test_count": 800,
+      "target_2x": 8522,
+      "target_4x": 17044,
+      "target_6x": 25566
+    },
+    {
+      "class_name": "MLB",
+      "slug": "mlb",
+      "class_index": 1,
+      "original_count": 5279,
+      "train_count": 4223,
+      "val_count": 264,
+      "test_count": 792,
+      "target_2x": 8446,
+      "target_4x": 16892,
+      "target_6x": 25338
+    },
+    {
+      "class_name": "MSV",
+      "slug": "msv",
+      "class_index": 2,
+      "original_count": 5216,
+      "train_count": 4172,
+      "val_count": 261,
+      "test_count": 783,
+      "target_2x": 8344,
+      "target_4x": 16688,
+      "target_6x": 25032
+    }
+  ],
+  "totals": {
+    "original_count": 15822,
+    "train_count": 12656,
+    "val_count": 791,
+    "test_count": 2375,
+    "target_2x": 25312,
+    "target_4x": 50624,
+    "target_6x": 75936
+  }
+}

@@ -1,0 +1,40 @@
+experiment:
+  name: "statistical_significance"
+  type: "statistics"
+
+reference_model: "maizeformerx"
+
+comparison_models:
+  - "mobilevit"
+  - "efficientformer"
+  - "tinyvit"
+  - "swinv2"
+  - "efficientnet_b1"
+
+datasets:
+  - "dataverse"
+  - "tanzania"
+  - "plagues_maiz"
+
+augmentation_configs:
+  dataverse: ["dataverse_x2", "dataverse_x4", "dataverse_x6"]
+  tanzania: ["tanzania_x2", "tanzania_x4", "tanzania_x6"]
+  plagues_maiz: ["plagues_maiz_x2", "plagues_maiz_x4", "plagues_maiz_x6"]
+
+tests:
+  paired_test: "wilcoxon"
+  alternative: "greater"
+  alpha: 0.05
+  multiple_comparison_correction: "holm"
+  effect_size: "cliffs_delta"
+
+metrics:
+  - "accuracy"
+  - "micro_f1"
+  - "pr_auc"
+  - "mcc"
+
+execution:
+  use_seedwise_results: true
+  export_tables: true
+  export_report: true

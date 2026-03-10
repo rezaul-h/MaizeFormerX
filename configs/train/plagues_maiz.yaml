@@ -1,0 +1,36 @@
+inherits: "configs/train/default.yaml"
+
+dataset:
+  name: "plagues_maiz"
+  num_classes: 16
+  class_names:
+    - "fall_armyworm"
+    - "grasshopper"
+    - "leaf_beetle"
+    - "leaf_blight"
+    - "leaf_spot"
+    - "maize_rust"
+    - "northern_leaf_blight"
+    - "phanerogam"
+    - "healthy"
+    - "streak_virus"
+    - "mosaic_virus"
+    - "smut"
+    - "downy_mildew"
+    - "borer"
+    - "thrips"
+    - "aphids"
+
+loader:
+  batch_size: 16
+
+training:
+  epochs: 30
+
+augmentation:
+  enabled: true
+  config_name: "plagues_maiz_x4"
+
+tracking:
+  experiment_name: "plagues_maiz_train"
+  tags: ["plagues_maiz", "in-domain", "fine-grained"]

@@ -1,0 +1,52 @@
+{
+  "dataset_name": "tanzania",
+  "taxonomy_level": "disease_class",
+  "num_classes": 3,
+  "classes": [
+    {
+      "class_name": "Healthy",
+      "slug": "healthy",
+      "class_index": 0,
+      "original_count": 3073,
+      "train_count": 2460,
+      "val_count": 154,
+      "test_count": 459,
+      "target_2x": 4920,
+      "target_4x": 9840,
+      "target_6x": 14760
+    },
+    {
+      "class_name": "MLN",
+      "slug": "mln",
+      "class_index": 1,
+      "original_count": 3231,
+      "train_count": 2585,
+      "val_count": 162,
+      "test_count": 484,
+      "target_2x": 5170,
+      "target_4x": 10340,
+      "target_6x": 15510
+    },
+    {
+      "class_name": "MSV",
+      "slug": "msv",
+      "class_index": 2,
+      "original_count": 3052,
+      "train_count": 2441,
+      "val_count": 153,
+      "test_count": 458,
+      "target_2x": 4882,
+      "target_4x": 9764,
+      "target_6x": 14646
+    }
+  ],
+  "totals": {
+    "original_count": 9356,
+    "train_count": 7486,
+    "val_count": 469,
+    "test_count": 1401,
+    "target_2x": 14972,
+    "target_4x": 29944,
+    "target_6x": 44916
+  }
+}

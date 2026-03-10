@@ -1,0 +1,74 @@
+dataset:
+  name: null
+  num_classes: null
+  split:
+    train_ratio: 0.80
+    val_ratio: 0.05
+    test_ratio: 0.15
+    stratified: true
+    fixed_split_file: true
+
+loader:
+  batch_size: 32
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: true
+  drop_last_train: true
+  shuffle_train: true
+  shuffle_eval: false
+
+training:
+  epochs: 30
+  early_stopping:
+    enabled: true
+    patience: 4
+    min_delta: 0.0
+    monitor: "val_accuracy"
+    mode: "max"
+
+  optimizer:
+    name: "adam"
+    lr: 0.00005
+    weight_decay: 0.00005
+    betas: [0.9, 0.999]
+    eps: 0.00000001
+
+  scheduler:
+    name: "cosine"
+    t_max: 30
+    eta_min: 0.000001
+    warmup_steps: 300
+
+  criterion:
+    name: "cross_entropy"
+    label_smoothing: 0.0
+    class_weights: null
+
+  regularization:
+    dropout: 0.30
+    grad_clip_norm: 1.0
+    ema:
+      enabled: false
+      decay: 0.999
+
+  precision:
+    amp: true
+
+  checkpointing:
+    save_best: true
+    save_last: true
+    metric: "val_accuracy"
+    mode: "max"
+
+evaluation:
+  run_val_each_epoch: true
+  run_test_after_training: true
+  threshold: 0.5
+
+augmentation:
+  enabled: true
+  config_name: null
+
+tracking:
+  experiment_name: "default_train"
+  tags: ["baseline"]

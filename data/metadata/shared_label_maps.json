@@ -1,0 +1,75 @@
+{
+  "protocol_name": "shared_label_intersection",
+  "version": "1.0",
+  "notes": [
+    "Cross-dataset evaluation is restricted to labels shared by both source and target datasets.",
+    "Only explicitly documented shared labels are encoded here.",
+    "No ontology-based aliasing from fine-grained pathogen classes to coarse disease classes is assumed by default."
+  ],
+  "datasets": {
+    "dataverse": ["Healthy", "MLB", "MSV"],
+    "tanzania": ["Healthy", "MLN", "MSV"],
+    "plagues_maiz": [
+      "Erwinia chrysanthemi",
+      "Erwinia stewartii",
+      "Clavibacter michiganensis",
+      "Pseudomonas syringae",
+      "Rubrilineans pseudomonas",
+      "Xanthomonas vasicola",
+      "Bipolaris maydis",
+      "Cercospora zeae-maydis",
+      "Colletotrichum graminicola",
+      "Gibberella zeae",
+      "Macrophomina phaseolina",
+      "Peronosclerospora sorghi",
+      "Puccinia sorghi",
+      "Exserohilum turcicum",
+      "Ustilago zeae",
+      "Virus"
+    ]
+  },
+  "pairwise_shared_labels": {
+    "dataverse__tanzania": {
+      "shared_labels": ["Healthy", "MSV"],
+      "source_to_shared": {
+        "Healthy": "Healthy",
+        "MSV": "MSV"
+      },
+      "target_to_shared": {
+        "Healthy": "Healthy",
+        "MSV": "MSV"
+      }
+    },
+    "tanzania__dataverse": {
+      "shared_labels": ["Healthy", "MSV"],
+      "source_to_shared": {
+        "Healthy": "Healthy",
+        "MSV": "MSV"
+      },
+      "target_to_shared": {
+        "Healthy": "Healthy",
+        "MSV": "MSV"
+      }
+    },
+    "dataverse__plagues_maiz": {
+      "shared_labels": [],
+      "source_to_shared": {},
+      "target_to_shared": {}
+    },
+    "plagues_maiz__dataverse": {
+      "shared_labels": [],
+      "source_to_shared": {},
+      "target_to_shared": {}
+    },
+    "tanzania__plagues_maiz": {
+      "shared_labels": [],
+      "source_to_shared": {},
+      "target_to_shared": {}
+    },
+    "plagues_maiz__tanzania": {
+      "shared_labels": [],
+      "source_to_shared": {},
+      "target_to_shared": {}
+    }
+  }
+}

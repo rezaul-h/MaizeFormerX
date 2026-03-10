@@ -1,0 +1,46 @@
+root: "."
+
+configs_dir: "./configs"
+data_dir: "./data"
+src_dir: "./src"
+outputs_dir: "./outputs"
+tests_dir: "./tests"
+notebooks_dir: "./notebooks"
+
+data:
+  raw_dir: "./data/raw"
+  interim_dir: "./data/interim"
+  processed_dir: "./data/processed"
+  metadata_dir: "./data/metadata"
+
+  raw:
+    dataverse: "./data/raw/dataverse"
+    tanzania: "./data/raw/tanzania"
+    plagues_maiz: "./data/raw/plagues_maiz"
+
+  processed:
+    dataverse: "./data/processed/dataverse"
+    tanzania: "./data/processed/tanzania"
+    plagues_maiz: "./data/processed/plagues_maiz"
+
+  manifests_dir: "./data/interim/manifests"
+  split_dir: "./data/interim/split_files"
+  label_maps_dir: "./data/interim/label_maps"
+
+metadata:
+  dataset_summary: "./data/metadata/dataset_summary.csv"
+  dataverse_classes: "./data/metadata/dataverse_classes.json"
+  tanzania_classes: "./data/metadata/tanzania_classes.json"
+  plagues_maiz_classes: "./data/metadata/plagues_maiz_classes.json"
+  shared_label_maps: "./data/metadata/shared_label_maps.json"
+
+outputs:
+  logs: "./outputs/logs"
+  checkpoints: "./outputs/checkpoints"
+  predictions: "./outputs/predictions"
+  metrics: "./outputs/metrics"
+  tables: "./outputs/tables"
+  figures: "./outputs/figures"
+  saliency: "./outputs/saliency"
+  profiles: "./outputs/profiles"
+  reports: "./outputs/reports"

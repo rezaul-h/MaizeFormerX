@@ -1,0 +1,23 @@
+inherits: "configs/train/default.yaml"
+
+dataset:
+  name: "tanzania"
+  num_classes: 3
+  class_names:
+    - "Healthy"
+    - "MLN"
+    - "MSV"
+
+loader:
+  batch_size: 32
+
+training:
+  epochs: 30
+
+augmentation:
+  enabled: true
+  config_name: "tanzania_x2"
+
+tracking:
+  experiment_name: "tanzania_train"
+  tags: ["tanzania", "in-domain"]

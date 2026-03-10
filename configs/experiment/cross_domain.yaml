@@ -1,0 +1,34 @@
+experiment:
+  name: "cross_domain_generalization"
+  type: "cross_domain"
+
+source_target_pairs:
+  - {source: "dataverse", target: "tanzania"}
+  - {source: "dataverse", target: "plagues_maiz"}
+  - {source: "tanzania", target: "dataverse"}
+  - {source: "tanzania", target: "plagues_maiz"}
+  - {source: "plagues_maiz", target: "dataverse"}
+  - {source: "plagues_maiz", target: "tanzania"}
+
+models:
+  - "maizeformerx"
+  - "mobilevit"
+  - "efficientformer"
+  - "tinyvit"
+  - "swinv2"
+  - "efficientnet_b1"
+
+protocol:
+  shared_label_only: true
+  fine_tune_on_target: false
+  use_source_best_checkpoint: true
+
+augmentation_for_source_training:
+  dataverse: "dataverse_x2"
+  tanzania: "tanzania_x2"
+  plagues_maiz: "plagues_maiz_x4"
+
+execution:
+  seeds: [42, 52, 62, 72, 82]
+  export_tables: true
+  export_figures: true

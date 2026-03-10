@@ -1,0 +1,9 @@
+model:
+  name: "shufflenetv2"
+  family: "cnn"
+  variant: "shufflenet_v2_x1_0"
+  pretrained: false
+  num_classes: null
+  image_size: 224
+  in_channels: 3
+  dropout: 0.20

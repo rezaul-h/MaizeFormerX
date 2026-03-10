@@ -1,0 +1,11 @@
+model:
+  name: "swinv2"
+  family: "vit"
+  variant: "swinv2_tiny_window8_256"
+  pretrained: false
+  num_classes: null
+  image_size: 224
+  in_channels: 3
+  dropout: 0.20
+  drop_path: 0.10
+  window_size: 8

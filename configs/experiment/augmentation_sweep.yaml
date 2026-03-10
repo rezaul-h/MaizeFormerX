@@ -1,0 +1,36 @@
+experiment:
+  name: "augmentation_sweep"
+  type: "augmentation_sweep"
+
+datasets:
+  - "dataverse"
+  - "tanzania"
+  - "plagues_maiz"
+
+models:
+  - "maizeformerx"
+  - "efficientnet_b1"
+
+sweep:
+  dataverse:
+    - "dataverse_x2"
+    - "dataverse_x4"
+    - "dataverse_x6"
+  tanzania:
+    - "tanzania_x2"
+    - "tanzania_x4"
+    - "tanzania_x6"
+  plagues_maiz:
+    - "plagues_maiz_x2"
+    - "plagues_maiz_x4"
+    - "plagues_maiz_x6"
+
+execution:
+  seeds: [42, 52, 62, 72, 82]
+  compare_metrics:
+    - "accuracy"
+    - "micro_f1"
+    - "pr_auc"
+    - "mcc"
+  export_tables: true
+  export_figures: true

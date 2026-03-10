@@ -1,0 +1,18 @@
+model:
+  name: "mixmobilenet"
+  family: "cnn"
+  variant: "mixmobilenet_custom"
+  pretrained: false
+  num_classes: null
+  image_size: 224
+  in_channels: 3
+  dropout: 0.25
+
+  backbone:
+    width_mult: 1.0
+    use_se: true
+    activation: "hardswish"
+
+  classifier:
+    hidden_dim: 512
+    dropout: 0.25

@@ -1,0 +1,42 @@
+experiment:
+  name: "in_domain_benchmark"
+  type: "in_domain"
+
+datasets:
+  - "dataverse"
+  - "tanzania"
+  - "plagues_maiz"
+
+models:
+  - "maizeformerx"
+  - "mobilevit"
+  - "efficientformer"
+  - "tinyvit"
+  - "swinv2"
+  - "shufflenetv2"
+  - "ghostnet"
+  - "mobilenetv3"
+  - "efficientnet_b0"
+  - "efficientnet_b1"
+  - "mixmobilenet"
+
+augmentation_configs:
+  dataverse:
+    - "dataverse_x2"
+    - "dataverse_x4"
+    - "dataverse_x6"
+  tanzania:
+    - "tanzania_x2"
+    - "tanzania_x4"
+    - "tanzania_x6"
+  plagues_maiz:
+    - "plagues_maiz_x2"
+    - "plagues_maiz_x4"
+    - "plagues_maiz_x6"
+
+execution:
+  seeds: [42, 52, 62, 72, 82]
+  save_best_checkpoint: true
+  aggregate_results: true
+  export_tables: true
+  export_figures: true

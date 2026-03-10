@@ -1,0 +1,39 @@
+experiment:
+  name: "explainability_gradcam"
+  type: "explainability"
+
+models:
+  - "maizeformerx"
+
+datasets:
+  - "dataverse"
+  - "tanzania"
+  - "plagues_maiz"
+
+selection:
+  correct_per_class: 5
+  incorrect_per_class: 5
+  topk_classes: 3
+
+gradcam:
+  method: "gradcam"
+  use_eigen_smooth: false
+  aug_smooth: false
+  overlay_alpha: 0.40
+  colormap: "jet"
+  normalize_cam: true
+
+target_layers:
+  maizeformerx:
+    - "fusion"
+    - "encoder.blocks[-1].norm1"
+
+augmentation_for_checkpoint_selection:
+  dataverse: "dataverse_x2"
+  tanzania: "tanzania_x2"
+  plagues_maiz: "plagues_maiz_x4"
+
+export:
+  save_raw_cam: true
+  save_overlay: true
+  save_casebook: true

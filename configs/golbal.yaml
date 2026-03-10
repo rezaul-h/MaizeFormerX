@@ -1,0 +1,81 @@
+project:
+  name: maizeformerx
+  version: "0.1.0"
+  description: "MaizeFormerX: lightweight multi-scale vision transformer for maize disease classification"
+  seed: 42
+  deterministic: true
+  cudnn_benchmark: false
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: true
+
+runtime:
+  device: "cuda"
+  mixed_precision: true
+  compile_model: false
+  channels_last: false
+  ddp: false
+  find_unused_parameters: false
+
+logging:
+  level: "INFO"
+  log_every_n_steps: 20
+  save_csv: true
+  save_json: true
+  save_tensorboard: true
+  save_wandb: false
+  wandb:
+    project: "maizeformerx"
+    entity: null
+    tags: ["maize", "plant-disease", "vision-transformer"]
+
+reproducibility:
+  seeds: [42, 52, 62, 72, 82]
+  save_split_artifacts: true
+  verify_no_leakage: true
+
+input:
+  image_size: 224
+  in_channels: 3
+  color_mode: "rgb"
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+evaluation:
+  primary_metric: "accuracy"
+  monitor_mode: "max"
+  metrics:
+    - accuracy
+    - micro_f1
+    - macro_f1
+    - pr_auc
+    - mcc
+  save_logits: true
+  save_probabilities: true
+  save_predictions: true
+  save_confusion_matrix: true
+  save_per_class_metrics: true
+
+checkpoint:
+  save_best_only: true
+  save_last: true
+  save_top_k: 1
+  resume: false
+  strict_load: true
+
+profiling:
+  warmup_iterations: 20
+  benchmark_iterations: 100
+  batch_size_cpu: 1
+  batch_size_gpu: 1
+
+stats:
+  confidence_level: 0.95
+  paired_test: "wilcoxon"
+  effect_size: "cliffs_delta"
+
+serving:
+  enable_gradcam: true
+  topk: 3
+  export_onnx: false
