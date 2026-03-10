@@ -1,5 +1,5 @@
-````markdown
 # MaizeFormerX: Lightweight Multi-Scale Vision Transformer for Maize Disease Classification
+
 MaizeFormerX is a deep learning framework for maize leaf disease classification using lightweight vision models, centered on a custom **multi-scale vision transformer** architecture. The repository implements the **full experimental pipeline** required to reproduce and extend the study, including dataset preparation, manifest generation, stratified splitting, model training, in-domain benchmarking, augmentation analysis, cross-domain evaluation, ablation studies, explainability, efficiency profiling, and statistical comparison. The framework is designed for **reproducible experimentation** across multiple maize image datasets with different class taxonomies and acquisition conditions. In addition to the proposed **MaizeFormerX** model, the repository supports several compact transformer and CNN baselines under a unified training and evaluation protocol. The codebase also includes **Grad-CAM-based explainability utilities** and a lightweight **FastAPI serving layer** for inference and demonstration.
 
 ---
@@ -577,6 +577,3 @@ This framework builds on the broader open-source deep learning ecosystem, includ
 * scikit-learn
 * FastAPI
 * matplotlib
-
-```
-```
